@@ -16,6 +16,7 @@ public class gunScript : MonoBehaviour {
     public void shoot()
     {
         Instantiate(bullet,shootPoint.transform.position,shootPoint.transform.rotation);
+        FindObjectOfType<audioManager>().Play("pistol");
     }
 
 	// Use this for initialization
