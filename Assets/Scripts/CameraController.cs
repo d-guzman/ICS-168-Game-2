@@ -25,6 +25,8 @@ public class CameraController : MonoBehaviour {
     private float rotateX;   // Numbers that are used to make the Quaternion 
     private float rotateY;
 
+    public bool ps4Controller;
+
     void Start() {
         if (CameraDistance > 0)
             CameraDistance = -CameraDistance;
@@ -75,8 +77,20 @@ public class CameraController : MonoBehaviour {
     }
 
     private void rotateCamera() {
-        rotateX += Input.GetAxis("CamHorizontal") * Time.deltaTime;
-        rotateY += Input.GetAxis("CamVertical") * Time.deltaTime;
+
+
+        if(ps4Controller)
+        {
+         //   Debug.Log("Yup ps4 time");
+            rotateX += Input.GetAxis("RightJoystickX") * Time.deltaTime;
+            rotateY += Input.GetAxis("RightJoystickY") * Time.deltaTime;
+        }
+        else
+        {
+            rotateX += Input.GetAxis("CamHorizontal") * Time.deltaTime;
+            rotateY += Input.GetAxis("CamVertical") * Time.deltaTime;
+        }
+
         rotateY = Mathf.Clamp(rotateY, -89.5f, 89.5f);
 
         nextRotation = Quaternion.Euler(rotateY, rotateX, 0);
