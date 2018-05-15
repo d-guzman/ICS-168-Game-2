@@ -20,7 +20,8 @@ public class CameraController : MonoBehaviour {
     [Tooltip("When using third-person perspective, this is the distance the camera will be set at.")]
     public float CameraDistance = -10f;
 
-    private Vector3 CameraPosition;
+    private Vector3 TP_CameraPosition;
+    //FP_cam is vector3.zero
     private Quaternion nextRotation;
     private float rotateX;   // Numbers that are used to make the Quaternion 
     private float rotateY;
@@ -30,10 +31,7 @@ public class CameraController : MonoBehaviour {
     void Start() {
         if (CameraDistance > 0)
             CameraDistance = -CameraDistance;
-        if (!firstPerson)
-            CameraPosition = new Vector3(0f, 0f, CameraDistance);
-        else
-            CameraPosition = Vector3.zero;
+        TP_CameraPosition = new Vector3(0f, 0f, CameraDistance);
     }
 
     void LateUpdate() {
@@ -59,7 +57,7 @@ public class CameraController : MonoBehaviour {
             else
             {
                 Vector3 CurrentPosition = currentCamera.localPosition;
-                currentCamera.localPosition = Vector3.Lerp(CurrentPosition, CameraPosition, 1f);
+                currentCamera.localPosition = Vector3.Lerp(CurrentPosition, TP_CameraPosition, 1f);
             }
         }
 
@@ -70,10 +68,10 @@ public class CameraController : MonoBehaviour {
     }
 
     private void updatePivotPosition() {
-        if(!firstPerson)
+        if (!firstPerson)
             transform.position = TP_CameraFocus.position;
         else
-            transform.position = FP_CameraFocus.position;
+            transform.position = FP_CameraFocus.TransformPoint(FP_CameraFocus.localPosition);
     }
 
     private void rotateCamera() {

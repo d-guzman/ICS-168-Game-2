@@ -127,10 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCamera: {fileID: 4021116158082708}
-  firstPerson: 1
+  firstPerson: 0
   FP_CameraFocus: {fileID: 0}
   TP_CameraFocus: {fileID: 0}
   CameraDistance: -10
+  ps4Controller: 0
 --- !u!124 &124346795326103118
 Behaviour:
   m_ObjectHideFlags: 1

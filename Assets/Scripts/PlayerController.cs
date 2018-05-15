@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour {
     public Camera mainCam;
+    [Range(1f,100f)]
+    public float FP_RotateSpeed;
+    [Range(1f,100f)]
+    public float TP_RotateSpeed;
 
     [Header("Player Movement Options")]
     [Tooltip("When this is true, player models will not rotate in the direction they are moving in.")]
@@ -21,6 +25,10 @@ public class PlayerController : MonoBehaviour {
     [Tooltip("How much force should the player jump with? This is applied to the rigidbody as an impulse force.")]
     public float jumpStrength = 5f;
     private bool isGrounded = true;
+
+    [Header("Hackjob Arm Rotation")]
+    public Transform shoulderPos;
+    public Transform arm;
 
     void Start() {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -48,15 +56,17 @@ public class PlayerController : MonoBehaviour {
         if (movement.magnitude != 0 && !strafeActive)
         {
             Quaternion rotation = Quaternion.LookRotation(movement);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, TP_RotateSpeed * Time.deltaTime);
             //transform.rotation = rotation;
         }
         else if (strafeActive)
         {
-            //Debug.Log("Cam Pivot Rotation: " + pivotTransform.rotation.eulerAngles);
             Quaternion rotation = Quaternion.Euler(0f, pivotTransform.rotation.eulerAngles.y, 0f);
-            transform.rotation = rotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, FP_RotateSpeed * Time.deltaTime);
         }
+        //arm rotation code i guuuuuuuuuuuuuess.
+        Quaternion shoulderRotation = Quaternion.Euler(pivotTransform.rotation.eulerAngles.x, pivotTransform.rotation.eulerAngles.y, 0f);
+        shoulderPos.rotation = Quaternion.Slerp(shoulderPos.rotation, shoulderRotation, 10f * Time.deltaTime);
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
