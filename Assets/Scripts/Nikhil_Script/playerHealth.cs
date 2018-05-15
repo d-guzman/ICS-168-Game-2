@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class playerHealth : MonoBehaviour {
 
-    public int maxHealth = 100;
-    public int health;
+    //public int maxHealth = 100;
+    public int health = 100;
 
     public gunScript gun;
+    public GameObject gunGameObject;
 
     public float shootTime = 0.0f;
+
+    public bool weaponEquipped = false;
+
+    public Transform gunSpawnPoint;
 
     //This script handles player health and attacking. PlayerController can focus on movement
 
 	// Use this for initialization
 	void Start () {
 
-        health = maxHealth;
 		
 	}
 	
@@ -25,16 +29,40 @@ public class playerHealth : MonoBehaviour {
         checkAttack();
 	}
 
+
+    public void equipGun(GameObject item)
+    {
+        gunGameObject = item;
+        gun = gunGameObject.GetComponent<gunScript>();
+        weaponEquipped = true;
+        GameObject instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
+        //instanceRef.transform.position = gunGameObject.transform.position;
+        //instanceRef.transform.rotation = gunGameObject.transform.rotation;
+      
+
+
+    }
+
+
     public void checkAttack()
     {
         //Debug.Log("Checking attack");
         if(Input.GetButton("A"))
         {
-            if(shootTime <= Time.time)
+            if(weaponEquipped)
             {
-                shootTime = Time.time + 0.4f; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
-                gun.shoot();
+                
+                if (shootTime <= Time.time)
+                {
+                    shootTime = Time.time + 0.4f; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
+                    gun.shoot();
+                }
             }
+            else
+            {
+                //Debug.Log("You cannot shoot for nothing is equipped yet");
+            }
+
             
         }
         

@@ -12,17 +12,35 @@ public class gunScript : MonoBehaviour {
     public GameObject bullet;
 
     public GameObject shootPoint;
+
+    private Transform childTrans;
+
+    //public Transform spawnPoint;
     
     public void shoot()
     {
-        Instantiate(bullet,shootPoint.transform.position,shootPoint.transform.rotation);
+        //Debug.Log(shootPoint.transform.position);
+
+        Vector3 worldPosition = transform.TransformPoint(transform.position);
+
+        childTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Debug.Log(childTrans.position);
+    
+        GameObject bully = Instantiate(bullet,childTrans.position,childTrans.localRotation);
+        //bully.transform.position = transform.position;
         FindObjectOfType<audioManager>().Play("pistol");
     }
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Awake () {
+
+        
+
+        //childTrans = GetComponentInParent<Transform>();
+
+        //  shootPoint = this.gameObject.transform.GetChild(0);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
