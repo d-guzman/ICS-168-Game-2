@@ -47,8 +47,11 @@ public class playerHealth : MonoBehaviour {
     public void checkAttack()
     {
         //Debug.Log("Checking attack");
-        if(Input.GetButton("A"))
+        //RightTrigger_2
+        float thing = Input.GetAxis("RightTrigger");
+        if (thing != 0.0)
         {
+            //Debug.Log("sshooting HAPPENS");
             if(weaponEquipped)
             {
                 

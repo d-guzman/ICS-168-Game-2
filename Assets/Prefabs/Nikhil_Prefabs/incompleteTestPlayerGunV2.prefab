@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 54767742597061620}
   - component: {fileID: 114787228758437588}
   m_Layer: 0
-  m_Name: TestPlayerGunV2
+  m_Name: incompleteTestPlayerGunV2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

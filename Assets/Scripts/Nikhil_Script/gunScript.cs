@@ -13,7 +13,7 @@ public class gunScript : MonoBehaviour {
 
     public GameObject shootPoint;
 
-    private Transform childTrans;
+    private Transform gunSpawnTrans;
 
     //public Transform spawnPoint;
     
@@ -23,10 +23,26 @@ public class gunScript : MonoBehaviour {
 
         Vector3 worldPosition = transform.TransformPoint(transform.position);
 
-        childTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Debug.Log(childTrans.position);
-    
-        GameObject bully = Instantiate(bullet,childTrans.position,childTrans.localRotation);
+        //Debug.Log("And the world position is " + worldPosition);
+
+        gunSpawnTrans = GameObject.FindGameObjectWithTag("gunspawn").GetComponent<Transform>();
+
+        GameObject bully;
+
+        if(gunSpawnTrans!= null)
+        {
+            Vector3 desiredPosition = gunSpawnTrans.position + shootPoint.transform.position;
+            //Debug.Log("The position  is " + gunSpawnTrans.position);
+            //Debug.Log("The desired position is " + desiredPosition);
+            bully = Instantiate(bullet, desiredPosition, gunSpawnTrans.localRotation);
+        }
+        else
+        {
+            Debug.Log("Oh man it looks like we can't find the desired position");
+        }
+       
+
+        //GameObject bully = Instantiate(bullet, gunSpawnTrans.position, gunSpawnTrans.localRotation);
         //bully.transform.position = transform.position;
         FindObjectOfType<audioManager>().Play("pistol");
     }

@@ -82,8 +82,8 @@ public class CameraControllerXboxV1 : MonoBehaviour {
     private void rotateCamera() {
         rotateX += Input.GetAxis(player1RightJoystickXAxisInput) * Time.deltaTime * sensitivity;
         rotateY += Input.GetAxis(player1RightJoystickYAxisInput) * Time.deltaTime * sensitivity;
-        if (rotateX == 0.0f && rotateY == 0.0f)
-            Debug.Log("No player 1 right joystick movement");
+        //if (rotateX == 0.0f && rotateY == 0.0f)
+        //   Debug.Log("No player 1 right joystick movement");
         rotateY = Mathf.Clamp(rotateY, -89.5f, 89.5f);
 
         nextRotation = Quaternion.Euler(rotateY, rotateX, 0);

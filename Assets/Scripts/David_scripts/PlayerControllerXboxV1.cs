@@ -69,7 +69,7 @@ public class PlayerControllerXboxV1 : MonoBehaviour {
         }
         else if (strafeActive)
         {
-            Debug.Log("Cam Pivot Rotation: " + pivotTransform.rotation.eulerAngles);
+            //Debug.Log("Cam Pivot Rotation: " + pivotTransform.rotation.eulerAngles);
             Quaternion rotation = Quaternion.Euler(0f, pivotTransform.rotation.eulerAngles.y, 0f);
             transform.rotation = rotation;
         }
