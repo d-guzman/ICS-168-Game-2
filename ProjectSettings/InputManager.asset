@@ -397,8 +397,8 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1
-    dead: 0.2
+    gravity: 0
+    dead: 0.19
     sensitivity: 1
     snap: 0
     invert: 0
@@ -413,8 +413,8 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1
-    dead: 0.2
+    gravity: 0
+    dead: 0.19
     sensitivity: 1
     snap: 0
     invert: 1
@@ -430,8 +430,8 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.01
-    sensitivity: 1000
+    dead: 0.19
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
@@ -446,8 +446,8 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.05
-    sensitivity: 1000
+    dead: 0.19
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
@@ -466,7 +466,7 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 8
     joyNum: 1
   - serializedVersion: 3
@@ -482,6 +482,6 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 9
     joyNum: 0
