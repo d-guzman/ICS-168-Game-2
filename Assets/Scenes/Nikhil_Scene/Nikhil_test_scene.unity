@@ -173,6 +173,15 @@ Prefab:
       propertyPath: FP_CameraFocus
       value: 
       objectReference: {fileID: 1009444680}
+    - target: {fileID: 1681811675932016, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
+      propertyPath: m_TagString
+      value: camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337056078128952, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: sensitivity
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
   m_IsPrefabParent: 0
@@ -189,11 +198,6 @@ Camera:
 --- !u!1 &317941996 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1459732807636256, guid: f32d593968f13eb4cb04855eaaeecb2c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1009444679}
---- !u!4 &317942003 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4828507439253906, guid: f32d593968f13eb4cb04855eaaeecb2c,
     type: 2}
   m_PrefabInternal: {fileID: 1009444679}
 --- !u!114 &317942004
@@ -264,11 +268,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 450529635}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0.34, z: 1.104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.61, y: -0.28, z: 0.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 317942003}
+  m_Father: {fileID: 295276195}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &486451356 stripped
@@ -651,6 +655,16 @@ Prefab:
       propertyPath: pivotTransform
       value: 
       objectReference: {fileID: 295276195}
+    - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
+        type: 2}
+      propertyPath: jumpStrength
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f32d593968f13eb4cb04855eaaeecb2c, type: 2}
   m_IsPrefabParent: 0

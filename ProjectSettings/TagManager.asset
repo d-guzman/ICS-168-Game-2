@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - gunspawn
+  - camera
   layers:
   - Default
   - TransparentFX

@@ -38,10 +38,13 @@ public class playerHealth : MonoBehaviour {
         gunGameObject = item;
         gun = gunGameObject.GetComponent<gunScript>();
         weaponEquipped = true;
+        //Vector3 desiredPosition = gunSpawnPoint.transform.position + gun.gunOffset;
         GameObject instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
+        //Debug.Log("The offset here us " + gun.gunOffset);
+        //instanceRef.transform.position = gun.gunOffset;
         //instanceRef.transform.position = gunGameObject.transform.position;
         //instanceRef.transform.rotation = gunGameObject.transform.rotation;
-      
+
 
 
     }
