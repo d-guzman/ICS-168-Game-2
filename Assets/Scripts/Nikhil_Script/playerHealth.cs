@@ -16,6 +16,8 @@ public class playerHealth : MonoBehaviour {
 
     public Transform gunSpawnPoint;
 
+    public RectTransform healthBar;
+
     //This script handles player health and attacking. PlayerController can focus on movement
 
 	// Use this for initialization
@@ -27,6 +29,7 @@ public class playerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         checkAttack();
+        healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
 	}
 
 
