@@ -24,6 +24,7 @@ public class gunScript : MonoBehaviour {
     public void shoot()
     {
 
+        if (camTrans == null) { camTrans = GameObject.FindGameObjectWithTag("camera").GetComponent<Transform>(); }
 
         gunSpawnTrans = GameObject.FindGameObjectWithTag("gunspawn").GetComponent<Transform>();
         

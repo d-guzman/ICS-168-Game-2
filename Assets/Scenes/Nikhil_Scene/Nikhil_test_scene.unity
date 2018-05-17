@@ -177,6 +177,11 @@ Prefab:
       propertyPath: m_TagString
       value: camera
       objectReference: {fileID: 0}
+    - target: {fileID: 114337056078128952, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: sensitivity
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
   m_IsPrefabParent: 0
@@ -650,6 +655,16 @@ Prefab:
       propertyPath: pivotTransform
       value: 
       objectReference: {fileID: 295276195}
+    - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
+        type: 2}
+      propertyPath: jumpStrength
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f32d593968f13eb4cb04855eaaeecb2c, type: 2}
   m_IsPrefabParent: 0
