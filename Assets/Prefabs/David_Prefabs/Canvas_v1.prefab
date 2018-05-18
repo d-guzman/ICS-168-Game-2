@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222215156178420868}
   - component: {fileID: 114768065338276368}
   m_Layer: 5
-  m_Name: background
+  m_Name: health bar background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 222135676371215018}
   - component: {fileID: 114338643117318086}
   m_Layer: 5
-  m_Name: foreground
+  m_Name: health bar foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
