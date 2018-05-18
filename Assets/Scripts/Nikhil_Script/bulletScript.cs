@@ -9,9 +9,11 @@ public class bulletScript : MonoBehaviour {
 
     public int damage = 10;
 
-	// Use this for initialization
-	void Start () {
-        Destroy(this.gameObject, 5f); //the bullet will kill itself in like 5 seconds 
+    public float lifeTime = 5f;
+
+    // Use this for initialization
+    void Start () {
+        Destroy(this.gameObject, lifeTime); //the bullet will kill itself in like 5 seconds 
 	}
 	
 	// Update is called once per frame

@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1681811675932016}
   m_IsPrefabParent: 1
+--- !u!1 &1620800865856054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4675431007007042}
+  m_Layer: 0
+  m_Name: GunSpawnPoint
+  m_TagString: gunspawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1681811675932016
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,7 +38,7 @@ GameObject:
   - component: {fileID: 114337056078128952}
   m_Layer: 0
   m_Name: TestCameraPivotWithXboxControls
-  m_TagString: Untagged
+  m_TagString: camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,8 +85,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4383398783514846}
+  - {fileID: 4675431007007042}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4675431007007042
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620800865856054}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.61, y: -0.28, z: 0.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4668498117085968}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20064386658512972
 Camera:
@@ -132,6 +161,7 @@ MonoBehaviour:
   FP_CameraFocus: {fileID: 0}
   TP_CameraFocus: {fileID: 0}
   CameraDistance: -10
+  ps4Controller: 0
 --- !u!114 &114337056078128952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +176,7 @@ MonoBehaviour:
   currentCamera: {fileID: 4383398783514846}
   player1RightJoystickXAxisInput: RightJoystickX
   player1RightJoystickYAxisInput: RightJoystickY
-  sensitivity: 40
+  sensitivity: 120
   firstPerson: 1
   FP_CameraFocus: {fileID: 0}
   TP_CameraFocus: {fileID: 0}

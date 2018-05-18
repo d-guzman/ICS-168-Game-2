@@ -172,15 +172,14 @@ Prefab:
         type: 2}
       propertyPath: FP_CameraFocus
       value: 
-      objectReference: {fileID: 1009444680}
-    - target: {fileID: 1681811675932016, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
-      propertyPath: m_TagString
-      value: camera
+      objectReference: {fileID: 1427064861}
+    - target: {fileID: 1620800865856054, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
+      propertyPath: m_Name
+      value: GunSpawnPointOLD
       objectReference: {fileID: 0}
-    - target: {fileID: 114337056078128952, guid: 99304822ab92ae648af2eb300a674ef8,
-        type: 2}
-      propertyPath: sensitivity
-      value: 120
+    - target: {fileID: 1620800865856054, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
@@ -195,28 +194,6 @@ Camera:
   m_PrefabParentObject: {fileID: 20064386658512972, guid: 99304822ab92ae648af2eb300a674ef8,
     type: 2}
   m_PrefabInternal: {fileID: 295276194}
---- !u!1 &317941996 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1459732807636256, guid: f32d593968f13eb4cb04855eaaeecb2c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1009444679}
---- !u!114 &317942004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 317941996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1effea8c5e51e14e88351d938c38a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  gun: {fileID: 0}
-  gunGameObject: {fileID: 0}
-  shootTime: 0
-  weaponEquipped: 0
-  gunSpawnPoint: {fileID: 450529636}
 --- !u!1 &362547243
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,34 +224,11 @@ Transform:
   m_Father: {fileID: 1421103516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &450529635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 450529636}
-  m_Layer: 0
-  m_Name: GunSpawnPoint
-  m_TagString: gunspawn
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &450529636
+--- !u!4 &450529636 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 450529635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.61, y: -0.28, z: 0.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 295276195}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 4675431007007042, guid: 99304822ab92ae648af2eb300a674ef8,
+    type: 2}
+  m_PrefabInternal: {fileID: 295276194}
 --- !u!20 &486451356 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20917039877882696, guid: dce6378cd73f43b44b4f64b212204bd6,
@@ -594,6 +548,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114917203200114186, guid: 45a48288e0c8870478d5a65c4bc868ed,
+        type: 2}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1130005788958378, guid: 3811e7059f05cb34e8d966a1015ccf5d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45a48288e0c8870478d5a65c4bc868ed, type: 2}
   m_IsPrefabParent: 0
@@ -636,15 +596,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1459732807636256, guid: f32d593968f13eb4cb04855eaaeecb2c, type: 2}
-      propertyPath: m_Name
-      value: TestPlayerGunV2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114183177569265072, guid: f32d593968f13eb4cb04855eaaeecb2c,
-        type: 2}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 295276196}
     - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
         type: 2}
       propertyPath: mainCam
@@ -655,24 +606,27 @@ Prefab:
       propertyPath: pivotTransform
       value: 
       objectReference: {fileID: 295276195}
-    - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
+    - target: {fileID: 114183177569265072, guid: f32d593968f13eb4cb04855eaaeecb2c,
         type: 2}
-      propertyPath: moveSpeed
-      value: 12.5
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 295276196}
+    - target: {fileID: 1459732807636256, guid: f32d593968f13eb4cb04855eaaeecb2c, type: 2}
+      propertyPath: m_Name
+      value: TestPlayerGunV2
       objectReference: {fileID: 0}
-    - target: {fileID: 114135334857013516, guid: f32d593968f13eb4cb04855eaaeecb2c,
+    - target: {fileID: 114316442724876304, guid: f32d593968f13eb4cb04855eaaeecb2c,
         type: 2}
-      propertyPath: jumpStrength
-      value: 6
+      propertyPath: gunSpawnPoint
+      value: 
+      objectReference: {fileID: 450529636}
+    - target: {fileID: 1459732807636256, guid: f32d593968f13eb4cb04855eaaeecb2c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f32d593968f13eb4cb04855eaaeecb2c, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1009444680 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4921940143843856, guid: f32d593968f13eb4cb04855eaaeecb2c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1009444679}
 --- !u!1 &1055076634
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +950,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1400638606}
   m_GameObject: {fileID: 1421103515}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1427064861 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4383202338674076, guid: 22f77a22240f47746bcdec83b4588381,
+    type: 2}
+  m_PrefabInternal: {fileID: 1660010895}
 --- !u!4 &1545652585 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4347716062804980, guid: dce6378cd73f43b44b4f64b212204bd6,
@@ -1056,6 +1015,68 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a8d80b19052401429256e6d98d49c36, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1660010895
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501862835711372, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499814687989592, guid: 22f77a22240f47746bcdec83b4588381,
+        type: 2}
+      propertyPath: gunSpawnPoint
+      value: 
+      objectReference: {fileID: 2088777640}
+    - target: {fileID: 114588562388941740, guid: 22f77a22240f47746bcdec83b4588381,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 295276196}
+    - target: {fileID: 114791040978822250, guid: 22f77a22240f47746bcdec83b4588381,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 295276196}
+    - target: {fileID: 114791040978822250, guid: 22f77a22240f47746bcdec83b4588381,
+        type: 2}
+      propertyPath: pivotTransform
+      value: 
+      objectReference: {fileID: 295276195}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1793264634
 Transform:
@@ -1294,6 +1315,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1400638606}
   m_GameObject: {fileID: 1904618863}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2088777639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1620800865856054, guid: 99304822ab92ae648af2eb300a674ef8,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2088777640}
+  m_Layer: 0
+  m_Name: GunSpawnPoint
+  m_TagString: gunspawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088777640
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4675431007007042, guid: 99304822ab92ae648af2eb300a674ef8,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2088777639}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.299, y: -0.144, z: 0.543}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 295276195}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2102350507 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4211290416994048, guid: e0aaa4ffa39f5e846845729c7ecffdb4,
@@ -1363,4 +1414,55 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce6378cd73f43b44b4f64b212204bd6, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2135286185
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923611314262220, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374577644501046, guid: 3811e7059f05cb34e8d966a1015ccf5d,
+        type: 2}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 295276196}
+    - target: {fileID: 1130005788958378, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3811e7059f05cb34e8d966a1015ccf5d, type: 2}
   m_IsPrefabParent: 0

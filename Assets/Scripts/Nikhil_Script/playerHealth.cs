@@ -10,6 +10,8 @@ public class playerHealth : MonoBehaviour {
     public gunScript gun;
     public GameObject gunGameObject;
 
+    
+
     public float shootTime = 0.0f;
 
     public bool weaponEquipped = false;

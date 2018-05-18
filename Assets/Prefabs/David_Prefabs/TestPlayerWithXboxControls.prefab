@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114183177569265072}
   - component: {fileID: 54327630322827244}
   - component: {fileID: 114135334857013516}
+  - component: {fileID: 114316442724876304}
   m_Layer: 0
   m_Name: TestPlayerWithXboxControls
   m_TagString: Player
@@ -187,7 +188,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   strafeActive: 1
   pivotTransform: {fileID: 0}
-  moveSpeed: 8
+  moveSpeed: 12.5
   player1AButtonInput: A
   player1BButtonInput: B
   player1XButtonInput: X
@@ -195,7 +196,7 @@ MonoBehaviour:
   player1LeftJoystickXAxisInput: LeftJoystickX
   player1LeftJoystickYAxisInput: LeftJoystickY
   player1JumpAxis: 
-  jumpStrength: 5
+  jumpStrength: 6
 --- !u!114 &114183177569265072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,10 +209,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
+  FP_RotateSpeed: 0
+  TP_RotateSpeed: 0
   strafeActive: 1
   pivotTransform: {fileID: 0}
   moveSpeed: 8
   jumpStrength: 5
+  shoulderPos: {fileID: 0}
+  arm: {fileID: 0}
+--- !u!114 &114316442724876304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1459732807636256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1effea8c5e51e14e88351d938c38a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  gun: {fileID: 0}
+  gunGameObject: {fileID: 0}
+  shootTime: 0
+  weaponEquipped: 0
+  gunSpawnPoint: {fileID: 0}
 --- !u!136 &136089107008205636
 CapsuleCollider:
   m_ObjectHideFlags: 1
