@@ -727,8 +727,10 @@ MonoBehaviour:
   damage: 10
   speed: 100
   range: 100
+  lifeTime: 2
+  fireRate: 0.4
   raycasting: 1
-  bullet: {fileID: 0}
+  bullet: {fileID: 1064450208588386, guid: 45f815eb839304143af09e23ef10b9a1, type: 2}
   shootPoint: {fileID: 0}
   gunOffset: {x: 0, y: 0, z: 0}
   fpsCamera: {fileID: 0}
