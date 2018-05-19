@@ -310,7 +310,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 114778106857442108}
   m_FillRect: {fileID: 224494832878520000}
   m_HandleRect: {fileID: 224514731094601988}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -493,7 +493,7 @@ Canvas:
   m_GameObject: {fileID: 1690024472067350}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -523,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.27654603, y: 0}
-  m_AnchoredPosition: {x: 12.600006, y: 30.600006}
+  m_AnchoredPosition: {x: 12.599976, y: 30.600006}
   m_SizeDelta: {x: -26.699997, y: 21.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224227973876639596
@@ -542,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.27654603, y: 0}
-  m_AnchoredPosition: {x: 12.600006, y: 30.600006}
+  m_AnchoredPosition: {x: 12.599976, y: 30.600006}
   m_SizeDelta: {x: -26.699997, y: 21.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224494832878520000
