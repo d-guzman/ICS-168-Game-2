@@ -10,7 +10,8 @@ public class playerHealth : MonoBehaviour {
     public gunScript gun;
     public GameObject gunGameObject;
 
-    
+
+    public float shootInterval;
 
     public float shootTime = 0.0f;
 
@@ -37,6 +38,7 @@ public class playerHealth : MonoBehaviour {
     {
         gunGameObject = item;
         gun = gunGameObject.GetComponent<gunScript>();
+        shootInterval = gun.fireRate;
         weaponEquipped = true;
         //Vector3 desiredPosition = gunSpawnPoint.transform.position + gun.gunOffset;
         GameObject instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
@@ -72,7 +74,7 @@ public class playerHealth : MonoBehaviour {
                 
                 if (shootTime <= Time.time)
                 {
-                    shootTime = Time.time + 0.4f; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
+                    shootTime = Time.time + shootInterval; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
                     gun.shoot();
                 }
             }

@@ -16,6 +16,9 @@ public class gunScript : MonoBehaviour {
 
     public bool raycasting;
 
+
+    public float fireRate = 0.4f;
+
     public GameObject bullet;
 
     public GameObject shootPoint;
