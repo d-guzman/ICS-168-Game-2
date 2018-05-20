@@ -18,12 +18,13 @@ public class playerHealth : MonoBehaviour {
 
     public Transform gunSpawnPoint;
 
+    private PlayerControllerXboxV1 currentPlayerController;
+
     //This script handles player health and attacking. PlayerController can focus on movement
 
 	// Use this for initialization
 	void Start () {
-
-		
+        currentPlayerController = GetComponent<PlayerControllerXboxV1>();
 	}
 	
 	// Update is called once per frame
@@ -39,6 +40,10 @@ public class playerHealth : MonoBehaviour {
         weaponEquipped = true;
         //Vector3 desiredPosition = gunSpawnPoint.transform.position + gun.gunOffset;
         GameObject instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
+        gunScript gunInfo = instanceRef.GetComponent<gunScript>();
+        gun.bulletSpawn = currentPlayerController.pivotTransform.GetChild(currentPlayerController.mainCam.transform.GetSiblingIndex());
+        gun.camTrans = currentPlayerController.pivotTransform;
+        gun.fpsCamera = currentPlayerController.mainCam;
         //Debug.Log("The offset here us " + gun.gunOffset);
         //instanceRef.transform.position = gun.gunOffset;
         //instanceRef.transform.position = gunGameObject.transform.position;
@@ -53,7 +58,12 @@ public class playerHealth : MonoBehaviour {
     {
         //Debug.Log("Checking attack");
         //RightTrigger_2
-        float thing = Input.GetAxis("RightTrigger");
+        string player = currentPlayerController.GetPlayerPrefix();
+        float thing = 0.0f;
+        if (player != null && player != "not yet assigned") {
+            thing = Input.GetAxis(player + "RightTrigger");
+        }
+
         if (thing != 0.0)
         {
             //Debug.Log("sshooting HAPPENS");

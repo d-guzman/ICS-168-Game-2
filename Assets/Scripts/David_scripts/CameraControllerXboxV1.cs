@@ -5,9 +5,13 @@ using UnityEngine;
 public class CameraControllerXboxV1 : MonoBehaviour {
 [Tooltip("This is the camera that is under the control of the player.")]
     public Transform currentCamera;
+    [Tooltip("This is how the camera knows which player's input it should take in.")]
+    public PlayerControllerXboxV1 currentPlayerController;
 
-	public string player1RightJoystickXAxisInput = "RightJoystickX";
-	public string player1RightJoystickYAxisInput = "RightJoystickY";
+    [Tooltip("The choosen suffix for what represents the right joystick's x/horizontal axis on an xbox controller in the Unity Input Manager.")]
+    public string RightJoystickXAxisInput = "RightJoystickX";
+    [Tooltip("The choosen suffix for what represents the right joystick's y/vertical axis on an xbox controller in the Unity Input Manager.")]
+	public string RightJoystickYAxisInput = "RightJoystickY";
 
 	public float sensitivity = 50.0f;
 
@@ -31,6 +35,7 @@ public class CameraControllerXboxV1 : MonoBehaviour {
     private float rotateY;
 
     void Start() {
+        // string str = PlayerControllerXboxV1.player1Str;
         if (CameraDistance > 0)
             CameraDistance = -CameraDistance;
         if (!firstPerson)
@@ -80,8 +85,11 @@ public class CameraControllerXboxV1 : MonoBehaviour {
     }
 
     private void rotateCamera() {
-        rotateX += Input.GetAxis(player1RightJoystickXAxisInput) * Time.deltaTime * sensitivity;
-        rotateY += Input.GetAxis(player1RightJoystickYAxisInput) * Time.deltaTime * sensitivity;
+        string player = currentPlayerController.GetPlayerPrefix();
+        if (player != null && player != "not yet assigned") {
+            rotateX += Input.GetAxis(player + RightJoystickXAxisInput) * Time.deltaTime * sensitivity;
+            rotateY += Input.GetAxis(player + RightJoystickYAxisInput) * Time.deltaTime * sensitivity;
+        }
         //if (rotateX == 0.0f && rotateY == 0.0f)
         //   Debug.Log("No player 1 right joystick movement");
         rotateY = Mathf.Clamp(rotateY, -89.5f, 89.5f);

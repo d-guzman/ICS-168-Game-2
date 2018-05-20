@@ -22,7 +22,7 @@ public class gunScript : MonoBehaviour {
 
     private Transform gunSpawnTrans;
 
-    private Transform camTrans;
+    public Transform camTrans;
 
     public Vector3 gunOffset;
 
@@ -33,6 +33,8 @@ public class gunScript : MonoBehaviour {
     public ParticleSystem MuzzleFlash;
 
     public GameObject impactEffect;
+
+    public Transform bulletSpawn;
 
     public void shoot()
     {
@@ -69,7 +71,8 @@ public class gunScript : MonoBehaviour {
         {
 
             if (camTrans == null) { camTrans = GameObject.FindGameObjectWithTag("camera").GetComponent<Transform>(); }
-            gunSpawnTrans = GameObject.FindGameObjectWithTag("gunspawn").GetComponent<Transform>();
+            // gunSpawnTrans = GameObject.FindGameObjectWithTag("gunspawn").GetComponent<Transform>();
+            gunSpawnTrans = bulletSpawn;
             GameObject bully;
             if (gunSpawnTrans != null)
             {
