@@ -49,7 +49,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4668498117085968}
-  - component: {fileID: 114032517542991682}
   - component: {fileID: 114337056078128952}
   m_Layer: 0
   m_Name: TestCameraPivotWithXboxControls
@@ -109,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681811675932016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.63422745, y: -9.772496e-17, z: 176.04562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4383398783514846}
@@ -174,23 +173,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705996572009654}
   m_Enabled: 1
---- !u!114 &114032517542991682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1681811675932016}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d6725d8b2fd2ad48bfa9aeaae10839a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCamera: {fileID: 4383398783514846}
-  firstPerson: 1
-  FP_CameraFocus: {fileID: 0}
-  TP_CameraFocus: {fileID: 0}
-  CameraDistance: -10
-  ps4Controller: 0
 --- !u!114 &114337056078128952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,8 +185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCamera: {fileID: 4383398783514846}
-  player1RightJoystickXAxisInput: RightJoystickX
-  player1RightJoystickYAxisInput: RightJoystickY
+  currentPlayerController: {fileID: 0}
+  RightJoystickXAxisInput: RightJoystickX
+  RightJoystickYAxisInput: RightJoystickY
   sensitivity: 120
   firstPerson: 1
   FP_CameraFocus: {fileID: 0}

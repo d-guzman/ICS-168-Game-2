@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 33351370800023766}
   - component: {fileID: 136089107008205636}
   - component: {fileID: 23953488285991196}
-  - component: {fileID: 114183177569265072}
   - component: {fileID: 54327630322827244}
   - component: {fileID: 114135334857013516}
   - component: {fileID: 114316442724876304}
@@ -57,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1459732807636256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: -0.020028716, y: 1, z: 136.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4921940143843856}
@@ -185,38 +184,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67f65cf42941c542a55914df05960b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 0
   mainCam: {fileID: 0}
   strafeActive: 1
   pivotTransform: {fileID: 0}
   moveSpeed: 12.5
-  player1AButtonInput: A
-  player1BButtonInput: B
-  player1XButtonInput: X
-  player1YButtonInput: Y
-  player1LeftJoystickXAxisInput: LeftJoystickX
-  player1LeftJoystickYAxisInput: LeftJoystickY
-  player1JumpAxis: 
+  AButtonInput: A
+  BButtonInput: B
+  XButtonInput: X
+  YButtonInput: Y
+  LeftJoystickXAxisInput: LeftJoystickX
+  LeftJoystickYAxisInput: LeftJoystickY
   jumpStrength: 6
---- !u!114 &114183177569265072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1459732807636256}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 875ee49d261ef954ca3e710149ab98c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  FP_RotateSpeed: 0
-  TP_RotateSpeed: 0
-  strafeActive: 1
-  pivotTransform: {fileID: 0}
-  moveSpeed: 8
-  jumpStrength: 5
-  shoulderPos: {fileID: 0}
-  arm: {fileID: 0}
 --- !u!114 &114316442724876304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,9 +210,12 @@ MonoBehaviour:
   health: 100
   gun: {fileID: 0}
   gunGameObject: {fileID: 0}
+  shootInterval: 0
   shootTime: 0
   weaponEquipped: 0
   gunSpawnPoint: {fileID: 0}
+  gameCont: {fileID: 0}
+  playerID: 
 --- !u!136 &136089107008205636
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -295,6 +295,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45a48288e0c8870478d5a65c4bc868ed, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &101759797
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -6.931847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17.18513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368569280821706, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0856fa9e707c7394b9a8dd431bb267e4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &188303884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,73 +2199,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3ddd244bee25f342be66e5cbe4be25d, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1835949659
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1835949661}
-  - component: {fileID: 1835949660}
-  - component: {fileID: 1835949662}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1835949660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835949659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71be4b0a1fdf6c4393fe4cab5b23fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: pistol
-    clip: {fileID: 8300000, guid: 96c61efe84c18e94d8eaf8b26ed607e0, type: 3}
-    volume: 0.266
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: rifle
-    clip: {fileID: 8300000, guid: 32cf56f419c4b7944aff21ddfdc4b7fb, type: 3}
-    volume: 0.266
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: heavy
-    clip: {fileID: 8300000, guid: 27da1ca0e37891b4291929820061adda, type: 3}
-    volume: 0.266
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
---- !u!4 &1835949661
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835949659}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.931847, y: 2.0000005, z: -17.18513}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1835949662
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835949659}
-  m_Enabled: 1
 --- !u!1 &1904618863
 GameObject:
   m_ObjectHideFlags: 0
