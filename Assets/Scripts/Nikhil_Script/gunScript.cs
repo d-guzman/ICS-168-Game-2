@@ -55,13 +55,20 @@ public class gunScript : MonoBehaviour {
 
             if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
             {
-                Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.name);
 
                 enemyScript enemy = hit.transform.GetComponent<enemyScript>();
 
                 if(enemy != null)
                 {
                     enemy.HurtEnemy(damage);
+                }
+
+                playerHealth enemyPlayer = hit.transform.GetComponent<playerHealth>();
+
+                if(enemyPlayer != null)
+                {
+                    enemyPlayer.hurtPlayer(damage);
                 }
 
                 GameObject impac =  Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -106,7 +113,7 @@ public class gunScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        
 
     }
 

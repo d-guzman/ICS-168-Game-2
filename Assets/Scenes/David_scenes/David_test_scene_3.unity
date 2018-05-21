@@ -318,6 +318,23 @@ Prefab:
       propertyPath: currentPlayerController
       value: 
       objectReference: {fileID: 2041293987}
+    - target: {fileID: 81562716339270162, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549024770866532, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549024770866532, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549024770866532, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
   m_IsPrefabParent: 0
@@ -1391,6 +1408,11 @@ Prefab:
       propertyPath: currentPlayerController
       value: 
       objectReference: {fileID: 2026840457}
+    - target: {fileID: 81562716339270162, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
   m_IsPrefabParent: 0
@@ -1929,6 +1951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835949661}
   - component: {fileID: 1835949660}
+  - component: {fileID: 1835949662}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1967,6 +1990,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1835949662
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835949659}
+  m_Enabled: 1
 --- !u!1 &1904618863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2034,7 @@ MonoBehaviour:
   health: 0
   gun: {fileID: 0}
   gunGameObject: {fileID: 0}
+  shootInterval: 0
   shootTime: 0
   weaponEquipped: 0
   gunSpawnPoint: {fileID: 362547244}

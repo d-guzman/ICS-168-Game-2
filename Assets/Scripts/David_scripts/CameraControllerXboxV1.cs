@@ -34,6 +34,8 @@ public class CameraControllerXboxV1 : MonoBehaviour {
     private float rotateX;   // Numbers that are used to make the Quaternion 
     private float rotateY;
 
+
+
     void Start() {
         // string str = PlayerControllerXboxV1.player1Str;
         if (CameraDistance > 0)

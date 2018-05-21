@@ -54,6 +54,10 @@ public class PlayerControllerXboxV1 : MonoBehaviour {
     public float jumpStrength = 5f;
     private bool isGrounded = true;
 
+        //These variables will be the positions of some guns 
+
+    private Vector3 riflePosition = new Vector3(0.299f, -0.144f, 0.543f);
+
     void Start() {
         rb = gameObject.GetComponent<Rigidbody>();
 		// if (player1JumpAxis == null) {
@@ -103,6 +107,10 @@ public class PlayerControllerXboxV1 : MonoBehaviour {
         camRight.y = 0f;
 
         movement = camForward * moveVert + camRight * moveHori;
+        if(moveVert != 0 && moveHori !=0)
+        {
+            //Debug.Log(playerPrefix+" is moving");
+        }
         movement.Normalize();
 
         if (movement.magnitude != 0 && !strafeActive)

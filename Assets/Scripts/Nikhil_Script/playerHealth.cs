@@ -23,19 +23,31 @@ public class playerHealth : MonoBehaviour {
 
     //This script handles player health and attacking. PlayerController can focus on movement
 
-	// Use this for initialization
-	void Start () {
+    //These variables will be the positions of some guns 
+    private Vector3 riflePosition = new Vector3(0.299f, -0.144f, 0.543f);
+
+    // Use this for initialization
+    void Start () {
         currentPlayerController = GetComponent<PlayerControllerXboxV1>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         checkAttack();
+        checkDeath();
 	}
+
+    public void hurtPlayer(int damage)
+    {
+        health = health - damage;
+    }
 
 
     public void equipGun(GameObject item)
     {
+
+        gunSpawnPoint.localPosition = riflePosition;
+
         gunGameObject = item;
         gun = gunGameObject.GetComponent<gunScript>();
         shootInterval = gun.fireRate;
@@ -61,6 +73,7 @@ public class playerHealth : MonoBehaviour {
         //Debug.Log("Checking attack");
         //RightTrigger_2
         string player = currentPlayerController.GetPlayerPrefix();
+        //Debug.Log("Hey so now we have player : " + player);
         float thing = 0.0f;
         if (player != null && player != "not yet assigned") {
             thing = Input.GetAxis(player + "RightTrigger");
@@ -68,7 +81,7 @@ public class playerHealth : MonoBehaviour {
 
         if (thing != 0.0)
         {
-            //Debug.Log("sshooting HAPPENS");
+            //Debug.Log("sshooting HAPPENS from "+player);
             if(weaponEquipped)
             {
                 
