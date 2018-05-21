@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script handles player health and attacking. PlayerController can focus on movement
 public class playerHealth : MonoBehaviour {
 
     //public int maxHealth = 100;
@@ -23,20 +24,18 @@ public class playerHealth : MonoBehaviour {
 
     private PlayerControllerXboxV1 currentPlayerController;
 
-    //This script handles player health and attacking. PlayerController can focus on movement
 
-    //These variables will be the positions of some guns 
-    private Vector3 riflePosition = new Vector3(0.299f, -0.144f, 0.543f);
+    public gameController gameCont;
+    public string playerID;
 
-    //  private Vector3 riflePosition = new Vector3(0.299f, -0.144f, 0.543f);
-
-    // Use this for initialization
     void Start () {
         currentPlayerController = GetComponent<PlayerControllerXboxV1>();
+        gameCont = FindObjectOfType<gameController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        playerID = currentPlayerController.GetPlayerPrefix(); //I (Nikhil) moved this here so it would be a class variable 
         checkAttack();
         checkDeath();
 	}
@@ -67,10 +66,10 @@ public class playerHealth : MonoBehaviour {
 
     public void checkAttack()
     {
-        string player = currentPlayerController.GetPlayerPrefix();
+        //string player = currentPlayerController.GetPlayerPrefix();
         float thing = 0.0f;
-        if (player != null && player != "not yet assigned") {
-            thing = Input.GetAxis(player + "RightTrigger");
+        if (playerID != null && playerID != "not yet assigned") {
+            thing = Input.GetAxis(playerID + "RightTrigger");
         }
 
         if (thing != 0.0)
@@ -99,6 +98,7 @@ public class playerHealth : MonoBehaviour {
     {
         if(health<=0)
         {
+            gameCont.playerDied(playerID);
             Destroy(this.gameObject);
         }
     }

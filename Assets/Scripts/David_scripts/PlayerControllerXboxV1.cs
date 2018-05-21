@@ -8,6 +8,8 @@ public class PlayerControllerXboxV1 : MonoBehaviour {
 	public int playerNumber;
     public Camera mainCam;
 
+
+
     [Header("Player Movement Options")]
     [Tooltip("When this is true, player models will not rotate in the direction they are moving in.")]
     public bool strafeActive = false;
@@ -60,6 +62,7 @@ public class PlayerControllerXboxV1 : MonoBehaviour {
 
     void Start() {
         rb = gameObject.GetComponent<Rigidbody>();
+        
 		// if (player1JumpAxis == null) {
 		// 	player1JumpAxis = AButtonInput;
 		// }
