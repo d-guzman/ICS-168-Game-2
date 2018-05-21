@@ -42,6 +42,7 @@ public class audioManager : MonoBehaviour {
         soundScript s = Array.Find(sounds, sound => sound.name == name);
         if(s == null)
         {
+            Debug.Log("lol fuck you we found no sound");
             return;
         }
         s.source.Play();

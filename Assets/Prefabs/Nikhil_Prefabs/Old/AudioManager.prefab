@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4368569280821706}
   - component: {fileID: 114339092616816928}
+  - component: {fileID: 81533635739813242}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -40,6 +41,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &81533635739813242
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485399012591514}
+  m_Enabled: 1
 --- !u!114 &114339092616816928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,7 +61,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: pistol
+    clip: {fileID: 8300000, guid: 96c61efe84c18e94d8eaf8b26ed607e0, type: 3}
+    volume: 0.266
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: rifle
     clip: {fileID: 8300000, guid: 32cf56f419c4b7944aff21ddfdc4b7fb, type: 3}
+    volume: 0.266
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: heavy
+    clip: {fileID: 8300000, guid: 27da1ca0e37891b4291929820061adda, type: 3}
     volume: 0.266
     pitch: 1
     source: {fileID: 0}
