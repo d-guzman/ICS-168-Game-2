@@ -21,13 +21,13 @@ public class gunScript : MonoBehaviour {
 
     public GameObject bullet;
 
-    public GameObject shootPoint;
+    //public GameObject shootPoint;
 
     private Transform gunSpawnTrans;
 
     public Transform camTrans;
 
-    public Vector3 gunOffset;
+   // public Vector3 gunOffset;
 
     public Camera fpsCamera;
 
@@ -38,6 +38,15 @@ public class gunScript : MonoBehaviour {
     public GameObject impactEffect;
 
     public Transform bulletSpawn;
+
+    [Tooltip("The name of the gun. Requipred for sound")]
+   public string gunName;
+
+    public void unequip()
+    {
+        Debug.Log("HRY");
+        Destroy(this.gameObject);
+    }
 
     public void shoot()
     {
@@ -79,10 +88,10 @@ public class gunScript : MonoBehaviour {
         }
         else
         {
-
+            //This is bullet shooting
             if (camTrans == null) { camTrans = GameObject.FindGameObjectWithTag("camera").GetComponent<Transform>(); }
             // gunSpawnTrans = GameObject.FindGameObjectWithTag("gunspawn").GetComponent<Transform>();
-            gunSpawnTrans = bulletSpawn;
+            //gunSpawnTrans = bulletSpawn;
             GameObject bully;
             if (gunSpawnTrans != null)
             {
@@ -98,7 +107,7 @@ public class gunScript : MonoBehaviour {
                 Debug.Log("Oh man it looks like we can't find the desired position");
             }
         }
-        FindObjectOfType<audioManager>().Play("pistol");
+        FindObjectOfType<audioManager>().Play(gunName);
     }
 
 	// Use this for initialization

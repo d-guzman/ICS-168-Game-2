@@ -10,7 +10,6 @@ public class playerHealth : MonoBehaviour {
     public gunScript gun;
     public GameObject gunGameObject;
 
-
     public float shootInterval;
 
     public float shootTime = 0.0f;
@@ -19,12 +18,17 @@ public class playerHealth : MonoBehaviour {
 
     public Transform gunSpawnPoint;
 
+
+    private GameObject instanceRef;
+
     private PlayerControllerXboxV1 currentPlayerController;
 
     //This script handles player health and attacking. PlayerController can focus on movement
 
     //These variables will be the positions of some guns 
     private Vector3 riflePosition = new Vector3(0.299f, -0.144f, 0.543f);
+
+    //  private Vector3 riflePosition = new Vector3(0.299f, -0.144f, 0.543f);
 
     // Use this for initialization
     void Start () {
@@ -45,35 +49,25 @@ public class playerHealth : MonoBehaviour {
 
     public void equipGun(GameObject item)
     {
-
-        gunSpawnPoint.localPosition = riflePosition;
-
+        if(weaponEquipped == true)
+        {
+            Destroy(instanceRef);
+        }
         gunGameObject = item;
-        gun = gunGameObject.GetComponent<gunScript>();
+        gun = item.GetComponent<gunScript>();
         shootInterval = gun.fireRate;
         weaponEquipped = true;
-        //Vector3 desiredPosition = gunSpawnPoint.transform.position + gun.gunOffset;
-        GameObject instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
+        instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
         gunScript gunInfo = instanceRef.GetComponent<gunScript>();
         gun.bulletSpawn = currentPlayerController.pivotTransform.GetChild(currentPlayerController.mainCam.transform.GetSiblingIndex());
         gun.camTrans = currentPlayerController.pivotTransform;
         gun.fpsCamera = currentPlayerController.mainCam;
-        //Debug.Log("The offset here us " + gun.gunOffset);
-        //instanceRef.transform.position = gun.gunOffset;
-        //instanceRef.transform.position = gunGameObject.transform.position;
-        //instanceRef.transform.rotation = gunGameObject.transform.rotation;
-
-
-
     }
 
 
     public void checkAttack()
     {
-        //Debug.Log("Checking attack");
-        //RightTrigger_2
         string player = currentPlayerController.GetPlayerPrefix();
-        //Debug.Log("Hey so now we have player : " + player);
         float thing = 0.0f;
         if (player != null && player != "not yet assigned") {
             thing = Input.GetAxis(player + "RightTrigger");
