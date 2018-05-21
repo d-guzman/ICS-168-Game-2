@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Ben_Scenes/Main Menu.unity
+    guid: 9c47bcb7321a80a45830019daf9f3663
+  - enabled: 1
+    path: Assets/Scenes/Parker_Scene/City.unity
+    guid: d6f1885599019c545a61c012e139d883
+  - enabled: 1
+    path: Assets/Scenes/Level1-4PlayerFunTimes.unity
+    guid: f9cc91b58e861f548bc13c02f43d371b
