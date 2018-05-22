@@ -25,7 +25,9 @@ public class itemPickup : MonoBehaviour {
         {
             // other.GetComponent<playerHealth>().equipGun(item);
             other.gameObject.GetComponent<playerHealth>().equipGun(item);
-            Destroy(this.gameObject);
+            other.gameObject.GetComponent<playerHealth>().weaponPickup = this.gameObject;
+            this.gameObject.SetActive(false);
+            // Destroy(this.gameObject);
         }
     }
 }

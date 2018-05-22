@@ -23,6 +23,11 @@ public class playerHealth : MonoBehaviour {
 
     private GameObject instanceRef;
 
+    private GameObject weapon;
+
+    [HideInInspector]
+    public GameObject weaponPickup;
+
     private PlayerControllerXboxV1 currentPlayerController;
 
     public Vector3 spawnPosition;
@@ -78,6 +83,12 @@ public class playerHealth : MonoBehaviour {
         weaponEquipped = true;
         instanceRef =Instantiate(gunGameObject,gunSpawnPoint);
         gunScript gunInfo = instanceRef.GetComponent<gunScript>();
+
+        if (weaponPickup != null) {
+            weaponPickup.SetActive(true);
+        }
+
+        weapon = instanceRef;
         gun.bulletSpawn = currentPlayerController.pivotTransform.GetChild(currentPlayerController.mainCam.transform.GetSiblingIndex());
         gun.camTrans = currentPlayerController.pivotTransform;
         gun.fpsCamera = currentPlayerController.mainCam;
@@ -132,6 +143,8 @@ public class playerHealth : MonoBehaviour {
         if(health<=0)
         {
             gameCont.playerDied(playerID);
+            Destroy(weapon);
+            weaponPickup.SetActive(true);
             respawn();
             //Destroy(this.gameObject);
         }
