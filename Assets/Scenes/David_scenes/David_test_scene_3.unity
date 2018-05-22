@@ -1820,6 +1820,11 @@ Prefab:
       propertyPath: FP_CameraFocus
       value: 
       objectReference: {fileID: 199364595}
+    - target: {fileID: 81562716339270162, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
   m_IsPrefabParent: 0

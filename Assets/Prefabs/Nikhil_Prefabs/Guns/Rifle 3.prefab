@@ -737,7 +737,7 @@ MonoBehaviour:
   impactEffect: {fileID: 1866203862008526, guid: c17e7322d52af294ba855562b638c394,
     type: 2}
   bulletSpawn: {fileID: 0}
-  gunName: 
+  gunName: rifle
 --- !u!198 &198873151410576934
 ParticleSystem:
   m_ObjectHideFlags: 1

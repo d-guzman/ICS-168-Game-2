@@ -19,10 +19,13 @@ public class playerHealth : MonoBehaviour {
 
     public Transform gunSpawnPoint;
 
+    public int killCount; //this is tied to the win condition
 
     private GameObject instanceRef;
 
     private PlayerControllerXboxV1 currentPlayerController;
+
+    public Vector3 spawnPosition;
 
 
     public gameController gameCont;
@@ -32,6 +35,8 @@ public class playerHealth : MonoBehaviour {
         currentPlayerController = gameObject.GetComponent<PlayerControllerXboxV1>();
         gameCont = FindObjectOfType<gameController>();
         gunSpawnPoint.localPosition = new Vector3(0, 0, 0);
+        spawnPosition = transform.position;
+        killCount = 0;
 	}
 	
 	// Update is called once per frame
@@ -41,11 +46,25 @@ public class playerHealth : MonoBehaviour {
         checkDeath();
 	}
 
-    public void hurtPlayer(int damage)
+    public bool hurtPlayer(int damage)
     {
         health = health - damage;
+        if(health < damage)
+        {
+            Debug.Log("Oh no dead " + playerID);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
+    public void killedSomeone()
+    {
+        killCount++;
+        gameCont.playerKilled(playerID,killCount); //provide the playerID of the killer
+    }
 
     public void equipGun(GameObject item)
     {
@@ -71,7 +90,7 @@ public class playerHealth : MonoBehaviour {
         float thing = 0.0f;
         if (playerID != null && playerID != "not yet assigned") {
             thing = Input.GetAxis(playerID + "RightTrigger");
-            Debug.Log(playerID + "RightTrigger");
+            //Debug.Log(playerID + "RightTrigger");
         }
 
         if (thing != 0.0)
@@ -83,7 +102,12 @@ public class playerHealth : MonoBehaviour {
                 if (shootTime <= Time.time)
                 {
                     shootTime = Time.time + shootInterval; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
-                    gun.shoot();
+                    bool killShot = gun.shoot();
+                    
+                    if(killShot) //this means that a player died
+                    {
+                        killedSomeone();
+                    }
                 }
             }
             else
@@ -95,13 +119,21 @@ public class playerHealth : MonoBehaviour {
         }
         
     }
+    
+    public void respawn()
+    {
+        transform.position = spawnPosition;
+        health = 100;
+        Debug.Log("Reborn again! " + playerID);
+    }
 
     public void checkDeath()
     {
         if(health<=0)
         {
             gameCont.playerDied(playerID);
-            Destroy(this.gameObject);
+            respawn();
+            //Destroy(this.gameObject);
         }
     }
 }

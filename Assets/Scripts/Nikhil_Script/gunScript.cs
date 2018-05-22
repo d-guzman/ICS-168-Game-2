@@ -48,9 +48,9 @@ public class gunScript : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
-    public void shoot()
+    public bool shoot()
     {
-        Debug.Log("shoot() called.");
+        //Debug.Log("shoot() called.");
         MuzzleFlash.Play();
 
         if (raycasting)
@@ -76,10 +76,20 @@ public class gunScript : MonoBehaviour {
 
                 playerHealth enemyPlayer = hit.transform.GetComponent<playerHealth>();
 
+                bool killedEnemy;
+
                 if(enemyPlayer != null)
                 {
-                    enemyPlayer.hurtPlayer(damage);
+
+                    killedEnemy = enemyPlayer.hurtPlayer(damage);
+                    if(killedEnemy)
+                    {
+                        return true;
+                    }
+
                 }
+
+
 
                 GameObject impac =  Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(impac, 1f);
@@ -108,7 +118,9 @@ public class gunScript : MonoBehaviour {
                 Debug.Log("Oh man it looks like we can't find the desired position");
             }
         }
+        //Debug.Log(gunName+ "I am asking it to play a sound " + gunName);
         FindObjectOfType<audioManager>().Play(gunName);
+        return false;
     }
 
 	// Use this for initialization
