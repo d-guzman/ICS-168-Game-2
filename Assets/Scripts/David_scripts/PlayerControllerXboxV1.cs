@@ -148,8 +148,10 @@ public class PlayerControllerXboxV1 : MonoBehaviour {
     private void jump() {
         // if ((Input.GetAxis("A") == 1) && isGrounded)
         if (playerPrefix != null) {
-            if ((Input.GetAxis(playerPrefix + AButtonInput) == 1) && isGrounded)
+            if ((Input.GetAxis(playerPrefix + AButtonInput) == 1) && isGrounded) {
+                Debug.Log(playerPrefix + AButtonInput);
                 rb.AddForce(transform.up * jumpStrength, ForceMode.Impulse);
+            }
         }
     }
 

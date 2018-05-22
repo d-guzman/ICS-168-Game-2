@@ -50,13 +50,14 @@ public class gunScript : MonoBehaviour {
 
     public void shoot()
     {
+        Debug.Log("shoot() called.");
         MuzzleFlash.Play();
 
         if (raycasting)
         {
             if(fpsCamera == null)
             {
-                fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+                // fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             }
             //Debug.Log("Oh yes raycasting time");
             RaycastHit hit;
@@ -89,7 +90,7 @@ public class gunScript : MonoBehaviour {
         else
         {
             //This is bullet shooting
-            if (camTrans == null) { camTrans = GameObject.FindGameObjectWithTag("camera").GetComponent<Transform>(); }
+            // if (camTrans == null) { camTrans = GameObject.FindGameObjectWithTag("camera").GetComponent<Transform>(); }
             // gunSpawnTrans = GameObject.FindGameObjectWithTag("gunspawn").GetComponent<Transform>();
             //gunSpawnTrans = bulletSpawn;
             GameObject bully;

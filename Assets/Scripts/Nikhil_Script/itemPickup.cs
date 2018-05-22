@@ -23,7 +23,8 @@ public class itemPickup : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<playerHealth>().equipGun(item);
+            // other.GetComponent<playerHealth>().equipGun(item);
+            other.gameObject.GetComponent<playerHealth>().equipGun(item);
             Destroy(this.gameObject);
         }
     }

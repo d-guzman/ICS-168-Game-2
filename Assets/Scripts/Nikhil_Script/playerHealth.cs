@@ -29,8 +29,9 @@ public class playerHealth : MonoBehaviour {
     public string playerID;
 
     void Start () {
-        currentPlayerController = GetComponent<PlayerControllerXboxV1>();
+        currentPlayerController = gameObject.GetComponent<PlayerControllerXboxV1>();
         gameCont = FindObjectOfType<gameController>();
+        gunSpawnPoint.localPosition = new Vector3(0, 0, 0);
 	}
 	
 	// Update is called once per frame
@@ -70,6 +71,7 @@ public class playerHealth : MonoBehaviour {
         float thing = 0.0f;
         if (playerID != null && playerID != "not yet assigned") {
             thing = Input.GetAxis(playerID + "RightTrigger");
+            Debug.Log(playerID + "RightTrigger");
         }
 
         if (thing != 0.0)
