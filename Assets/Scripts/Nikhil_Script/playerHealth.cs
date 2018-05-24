@@ -144,7 +144,11 @@ public class playerHealth : MonoBehaviour {
         {
             gameCont.playerDied(playerID);
             Destroy(weapon);
-            weaponPickup.SetActive(true);
+
+            if (weaponPickup != null) {
+                weaponPickup.SetActive(true);
+            }
+            
             respawn();
             //Destroy(this.gameObject);
         }

@@ -210,16 +210,20 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223117894011418362, guid: d699fc2861c6bca43a2e3ebea7f6db76,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 295276196}
     - target: {fileID: 114740959511171894, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: healthController
       value: 
       objectReference: {fileID: 1581583522}
+    - target: {fileID: 223117894011418362, guid: d699fc2861c6bca43a2e3ebea7f6db76,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 295276196}
+    - target: {fileID: 1690024472067350, guid: d699fc2861c6bca43a2e3ebea7f6db76, type: 2}
+      propertyPath: m_Name
+      value: player 1 canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 224494832878520000, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -230,14 +234,10 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223117894011418362, guid: d699fc2861c6bca43a2e3ebea7f6db76,
+    - target: {fileID: 224356135970705388, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690024472067350, guid: d699fc2861c6bca43a2e3ebea7f6db76, type: 2}
-      propertyPath: m_Name
-      value: player 1 canvas
+      propertyPath: m_AnchoredPosition.x
+      value: 12.900009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d699fc2861c6bca43a2e3ebea7f6db76, type: 2}
@@ -516,7 +516,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1661845198402816, guid: 22f77a22240f47746bcdec83b4588381, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114499814687989592, guid: 22f77a22240f47746bcdec83b4588381,
         type: 2}
@@ -978,6 +978,11 @@ Prefab:
       propertyPath: m_PlaneDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224356135970705388, guid: d699fc2861c6bca43a2e3ebea7f6db76,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.900009
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d699fc2861c6bca43a2e3ebea7f6db76, type: 2}
   m_IsPrefabParent: 0
@@ -1178,6 +1183,7 @@ MonoBehaviour:
   - {fileID: 1337566571058694, guid: e98e40cfe901dc94e93362a7d54943cd, type: 2}
   - {fileID: 1197772536065194, guid: 9c32749b8200fdd45a186c776fdada68, type: 2}
   overallKillCount: 0
+  winCondition: 5
 --- !u!4 &892612707
 Transform:
   m_ObjectHideFlags: 0
@@ -1798,7 +1804,7 @@ Prefab:
       objectReference: {fileID: 449721825}
     - target: {fileID: 1681811675932016, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20064386658512972, guid: 99304822ab92ae648af2eb300a674ef8,
         type: 2}
@@ -2215,12 +2221,12 @@ Prefab:
     - target: {fileID: 224494832878520000, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224494832878520000, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224168616699365296, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
@@ -2234,22 +2240,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1690024472067350, guid: d699fc2861c6bca43a2e3ebea7f6db76, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224514731094601988, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224514731094601988, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224514731094601988, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114740959511171894, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
@@ -2443,6 +2449,9 @@ MonoBehaviour:
   shootTime: 0
   weaponEquipped: 0
   gunSpawnPoint: {fileID: 362547244}
+  killCount: 0
+  weaponPickup: {fileID: 0}
+  spawnPosition: {x: 0, y: 0, z: 0}
   gameCont: {fileID: 0}
   playerID: 
 --- !u!54 &1904618865
@@ -2760,6 +2769,11 @@ Prefab:
         type: 2}
       propertyPath: m_PlaneDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224356135970705388, guid: d699fc2861c6bca43a2e3ebea7f6db76,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.900009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d699fc2861c6bca43a2e3ebea7f6db76, type: 2}
