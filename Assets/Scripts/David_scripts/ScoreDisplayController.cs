@@ -29,6 +29,9 @@ public class ScoreDisplayController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (scoreController == null) {
+			scoreController = scoreInfo.healthController;
+		}
 		scoreDisplay.text = "Kills: " + scoreController.killCount + " / " + scoreNeeded;
 	}
 }

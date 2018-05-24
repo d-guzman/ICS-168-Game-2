@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4492479843654436}
   - component: {fileID: 114656313780581186}
   - component: {fileID: 81702799180860982}
+  - component: {fileID: 114028611859837150}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -48,6 +49,23 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383252115187056}
   m_Enabled: 1
+--- !u!114 &114028611859837150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383252115187056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7fd431e4cb8904dbab566dae3f6728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 1456069848805426, guid: de0734a4bbddb0b41a9d52567156e4cb, type: 2}
+  - {fileID: 1337566571058694, guid: e98e40cfe901dc94e93362a7d54943cd, type: 2}
+  - {fileID: 1197772536065194, guid: 9c32749b8200fdd45a186c776fdada68, type: 2}
+  overallKillCount: 0
+  winCondition: 5
 --- !u!114 &114656313780581186
 MonoBehaviour:
   m_ObjectHideFlags: 1
