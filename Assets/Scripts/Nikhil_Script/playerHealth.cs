@@ -46,6 +46,8 @@ public class playerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (gameCont == null) 
+            gameCont = FindObjectOfType<gameController>();
         playerID = currentPlayerController.GetPlayerPrefix(); //I (Nikhil) moved this here so it would be a class variable 
         checkAttack();
         checkDeath();

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour {
 
@@ -15,6 +17,8 @@ public class gameController : MonoBehaviour {
 
     [Tooltip("How many deaths needed to win")]
     public int winCondition = 5;
+
+    // private Scene currentLevel;
 
 
     private void Awake()
@@ -40,9 +44,16 @@ public class gameController : MonoBehaviour {
 
         if (killCount >= 5)
         {
-            Debug.Log(playerID + " HAS WON THE GAAME");
-        }
+            GameObject[] winTexts = GameObject.FindGameObjectsWithTag("GameOver");
 
+            for (int i = 0; i < winTexts.Length; i++) {
+                winTexts[i].GetComponent<Text>().enabled = true;
+                winTexts[i].GetComponent<Text>().text = playerID + " Wins!";
+            }
+
+            Debug.Log(playerID + " HAS WON THE GAAME");
+            StartCoroutine(GoToMenu());
+        }
         
     }
 
@@ -59,4 +70,9 @@ public class gameController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    IEnumerator GoToMenu() {
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene("Main Menu");
+    }
 }
