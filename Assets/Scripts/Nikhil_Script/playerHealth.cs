@@ -25,7 +25,7 @@ public class playerHealth : MonoBehaviour {
 
     private GameObject weapon;
 
-    [HideInInspector]
+    // [HideInInspector]
     public GameObject weaponPickup;
 
     private PlayerControllerXboxV1 currentPlayerController;
@@ -38,7 +38,7 @@ public class playerHealth : MonoBehaviour {
 
     void Start () {
         currentPlayerController = gameObject.GetComponent<PlayerControllerXboxV1>();
-        gameCont = FindObjectOfType<gameController>();
+        // gameCont = FindObjectOfType<gameController>();
         gunSpawnPoint.localPosition = new Vector3(0, 0, 0);
         spawnPosition = transform.position;
         killCount = 0;
@@ -146,10 +146,15 @@ public class playerHealth : MonoBehaviour {
         {
             gameCont.playerDied(playerID);
             Destroy(weapon);
+            gun = null;
+            gunGameObject = null;
+            weaponEquipped = false;
 
             if (weaponPickup != null) {
                 weaponPickup.SetActive(true);
             }
+
+            weaponPickup = null;
             
             respawn();
             //Destroy(this.gameObject);

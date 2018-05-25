@@ -280,7 +280,7 @@ Prefab:
         type: 2}
       propertyPath: item
       value: 
-      objectReference: {fileID: 1431335568467344, guid: bb9f14f0fcb84424b98382e6fe6463ac,
+      objectReference: {fileID: 1431335568467344, guid: 0056161fce2a20747839c49fcde3a805,
         type: 2}
     - target: {fileID: 1460269813677610, guid: 45a48288e0c8870478d5a65c4bc868ed, type: 2}
       propertyPath: m_Name
@@ -631,6 +631,11 @@ Prefab:
     - target: {fileID: 81562716339270162, guid: 99304822ab92ae648af2eb300a674ef8,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20064386658512972, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1270,7 +1275,7 @@ Prefab:
         type: 2}
       propertyPath: item
       value: 
-      objectReference: {fileID: 1130005788958378, guid: 3811e7059f05cb34e8d966a1015ccf5d,
+      objectReference: {fileID: 1130005788958378, guid: 02a7907ef05c2fb44a8d9683379aed6d,
         type: 2}
     - target: {fileID: 1460269813677610, guid: 45a48288e0c8870478d5a65c4bc868ed, type: 2}
       propertyPath: m_Name
@@ -1822,6 +1827,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20064386658512972, guid: 99304822ab92ae648af2eb300a674ef8,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99304822ab92ae648af2eb300a674ef8, type: 2}
   m_IsPrefabParent: 0
@@ -2089,7 +2099,7 @@ Prefab:
         type: 2}
       propertyPath: item
       value: 
-      objectReference: {fileID: 1842206035317492, guid: 873a750d2e45d9c4787630dd046be355,
+      objectReference: {fileID: 1842206035317492, guid: 78e6cd650f3a0514497a11f98c567438,
         type: 2}
     - target: {fileID: 1460269813677610, guid: 45a48288e0c8870478d5a65c4bc868ed, type: 2}
       propertyPath: m_Name

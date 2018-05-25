@@ -21,7 +21,7 @@ public class gameController : MonoBehaviour {
     // private Scene currentLevel;
 
 
-    private void Awake()
+    public void Start()
     {
         if (instance == null)
         {
@@ -29,7 +29,7 @@ public class gameController : MonoBehaviour {
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             return;
         }
 
@@ -57,19 +57,10 @@ public class gameController : MonoBehaviour {
         
     }
 
-
     public void playerDied(string playerID) //called when the player dies 
     {
         Debug.Log("It seems like "+playerID+"has died. Very sad =(");
     }
-
-    void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
 
     IEnumerator GoToMenu() {
         yield return new WaitForSeconds(5.0f);
