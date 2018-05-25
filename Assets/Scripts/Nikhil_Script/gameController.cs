@@ -40,7 +40,7 @@ public class gameController : MonoBehaviour {
     public void playerKilled(string playerID,int killCount) //called when the player kills someone   
     {
         //When the player shoots someone, maybe HurtPlayer can return true or false so the player knows if they killed someone
-        Debug.Log("oH mY lOrDDDy it seems that "+playerID+" has KIIILED");
+        //Debug.Log("oH mY lOrDDDy it seems that "+playerID+" has KIIILED");
 
         if (killCount >= 5)
         {
@@ -59,7 +59,7 @@ public class gameController : MonoBehaviour {
 
     public void playerDied(string playerID) //called when the player dies 
     {
-        Debug.Log("It seems like "+playerID+"has died. Very sad =(");
+        //Debug.Log("It seems like "+playerID+"has died. Very sad =(");
     }
 
     IEnumerator GoToMenu() {

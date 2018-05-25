@@ -8,6 +8,7 @@ TagManager:
   - gunspawn
   - camera
   - GameOver
+  - KillPlane
   layers:
   - Default
   - TransparentFX

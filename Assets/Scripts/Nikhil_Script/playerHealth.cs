@@ -135,10 +135,6 @@ public class playerHealth : MonoBehaviour {
                     }
                 }
             }
-            else
-            {
-                //Debug.Log("You cannot shoot for nothing is equipped yet");
-            }
         }
     }
     
@@ -174,5 +170,12 @@ public class playerHealth : MonoBehaviour {
         canShoot = false;
         yield return new WaitForSeconds(shootInterval);
         canShoot = true;
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "KillPlane") {
+            health = 0;
+            killCount--;
+        }
     }
 }
