@@ -36,6 +36,8 @@ public class playerHealth : MonoBehaviour {
     public gameController gameCont;
     public string playerID;
 
+    private bool canShoot = true;
+
     void Start () {
         currentPlayerController = gameObject.GetComponent<PlayerControllerXboxV1>();
         // gameCont = FindObjectOfType<gameController>();
@@ -55,16 +57,18 @@ public class playerHealth : MonoBehaviour {
 
     public bool hurtPlayer(int damage)
     {
-        health = health - damage;
-        if(health < damage)
+        if(health <= damage )
         {
             Debug.Log("Oh no dead " + playerID);
+            health = health - damage;
             return true;
         }
         else
         {
+            health = health - damage;
             return false;
         }
+        
     }
 
     public void killedSomeone()
@@ -111,13 +115,21 @@ public class playerHealth : MonoBehaviour {
             //Debug.Log("sshooting HAPPENS from "+player);
             if(weaponEquipped)
             {
-                
-                if (shootTime <= Time.time)
-                {
-                    shootTime = Time.time + shootInterval; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
+                //if (shootTime <= Time.time)
+                //{
+                //    shootTime = Time.time + shootInterval; //Bullets will be shot every 0.4 seconds. Change this number to change the fire rate.
+                //    bool killShot = gun.shoot();
+
+                //    if(killShot) //this means that a player died
+                //    {
+                //        killedSomeone();
+                //    }
+                //}
+                if (canShoot) {
+                    StartCoroutine(waitForFire());
                     bool killShot = gun.shoot();
-                    
-                    if(killShot) //this means that a player died
+
+                    if (killShot) //this means that a player died
                     {
                         killedSomeone();
                     }
@@ -127,10 +139,7 @@ public class playerHealth : MonoBehaviour {
             {
                 //Debug.Log("You cannot shoot for nothing is equipped yet");
             }
-
-            
         }
-        
     }
     
     public void respawn()
@@ -159,5 +168,11 @@ public class playerHealth : MonoBehaviour {
             respawn();
             //Destroy(this.gameObject);
         }
+    }
+
+    IEnumerator waitForFire() {
+        canShoot = false;
+        yield return new WaitForSeconds(shootInterval);
+        canShoot = true;
     }
 }

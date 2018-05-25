@@ -51,28 +51,28 @@ public class gunScript : MonoBehaviour {
     public bool shoot()
     {
         //Debug.Log("shoot() called.");
+        //Debug.Log(gunName+ "I am asking it to play a sound " + gunName);
+        FindObjectOfType<audioManager>().Play(gunName);
         MuzzleFlash.Play();
 
         if (raycasting)
         {
-            if(fpsCamera == null)
+            if (fpsCamera == null)
             {
                 // fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             }
             //Debug.Log("Oh yes raycasting time");
             RaycastHit hit;
-            
 
             if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
             {
                 //Debug.Log(hit.transform.name);
+                //enemyScript enemy = hit.transform.GetComponent<enemyScript>();
 
-                enemyScript enemy = hit.transform.GetComponent<enemyScript>();
-
-                if(enemy != null)
-                {
-                    enemy.HurtEnemy(damage);
-                }
+                //if(enemy != null)
+                //{
+                //    enemy.HurtEnemy(damage);
+                //}
 
                 playerHealth enemyPlayer = hit.transform.GetComponent<playerHealth>();
 
@@ -80,22 +80,15 @@ public class gunScript : MonoBehaviour {
 
                 if(enemyPlayer != null)
                 {
-
                     killedEnemy = enemyPlayer.hurtPlayer(damage);
                     if(killedEnemy)
                     {
                         return true;
                     }
-
                 }
-
-
-
                 GameObject impac =  Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(impac, 1f);
-
             }
-
         }
         else
         {
@@ -118,8 +111,6 @@ public class gunScript : MonoBehaviour {
                 Debug.Log("Oh man it looks like we can't find the desired position");
             }
         }
-        //Debug.Log(gunName+ "I am asking it to play a sound " + gunName);
-        FindObjectOfType<audioManager>().Play(gunName);
         return false;
     }
 

@@ -724,12 +724,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2707879e67a98be4e8f72736c444b45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 20
   speed: 100
   range: 60
   lifeTime: 2
   raycasting: 1
-  fireRate: 0.5
+  fireRate: 0.55
   bullet: {fileID: 1064450208588386, guid: 45f815eb839304143af09e23ef10b9a1, type: 2}
   camTrans: {fileID: 0}
   fpsCamera: {fileID: 0}
