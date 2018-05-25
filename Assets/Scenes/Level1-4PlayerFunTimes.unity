@@ -7226,11 +7226,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223117894011418362, guid: d699fc2861c6bca43a2e3ebea7f6db76,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1332728795}
     - target: {fileID: 114740959511171894, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: healthController
@@ -7240,6 +7235,11 @@ Prefab:
       propertyPath: m_Name
       value: player 1 canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 223117894011418362, guid: d699fc2861c6bca43a2e3ebea7f6db76,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1332728795}
     - target: {fileID: 224494832878520000, guid: d699fc2861c6bca43a2e3ebea7f6db76,
         type: 2}
       propertyPath: m_AnchorMax.x
